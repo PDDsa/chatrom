@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<script language="JavaScript">
+{#    <input type="submit" name="submit" onclick="myrefresh()">#}
+function myrefresh()
+{
+window.location.reload();
+}
+{#setTimeout('myrefresh()',3000); //指定1秒刷新一次#}
+</script>
+
+
+{#<script language=javascript>#}
+{#fuction open(){#}
+{#if(!document.form_name.username.value) {#}
+{#alert("请输入用户名！"); document.form_name.username.focus(); return false;#}
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Toy Chat Application">
+    <title>{% block title %}--程源斌出品--{% endblock %} | 聊天app</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+
+{#<button type="submit" class="form-control"> 刷新 </button>#}
+
+{% include 'header.html' %}
+
+{% block main %}
+{% endblock %}
+
+</body>
+</html>
